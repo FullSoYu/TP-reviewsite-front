@@ -12,6 +12,7 @@
   width: 1200px;
   margin: 0 auto;
   text-align: center;
+  border: 1px solid red;
 }
 .helpTemplate > div {
   position: relative;
@@ -25,12 +26,18 @@
   margin-left: 20px;
   cursor: pointer;
 }
-.findId:active {
+.findId:hover {
   background-color: rgba(130, 130, 148, 0.2);
   position: relative;
   top: 152px;
   box-shadow: 2px 2px 0 rgb(0, 0, 0, 0.5);
 }
+
+.findId:active {
+  background-color: rgba(85, 85, 105, 0.2);
+  top: 155px;
+}
+
 .findId > div {
   position: relative;
   display: block;
