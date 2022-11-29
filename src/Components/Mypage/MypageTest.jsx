@@ -138,10 +138,10 @@ const MypageTest = () => {
             <div className="MypageEdit_passwordbox_newpasswordbox_content MyPageEdit_box_content">
               <input
                 className="MypageEdit_passwordbox_newpasswordbox_input input_common_properties"
-                type="text"
+                type="password"
                 onChange={changePassword}
-                placeholder="비밀번호를 입력해주세요(8 - 12자리)"
-                // value={""}
+                placeholder="비밀번호를 입력해주세요"
+                value={password}
               ></input>
             </div>
             <div className="MypageEdit_passwordbox_newpasswordbox2_subject MyPageEdit_box_subject">
@@ -150,9 +150,7 @@ const MypageTest = () => {
             <div className="MypageEdit_passwordbox_newpasswordbox2_content MyPageEdit_box_content">
               <input
                 className="MypageEdit_passwordbox_newpasswordbox2_input input_common_properties"
-                type="text"
-                onChange={changePassword}
-                // value={""}
+                type="password"
               ></input>
             </div>
           </div>
@@ -216,7 +214,7 @@ const MypageTest = () => {
               }
             }}
           >
-            회원탈퇴
+            회원 탈퇴
           </button>
         </div>
       </div>
