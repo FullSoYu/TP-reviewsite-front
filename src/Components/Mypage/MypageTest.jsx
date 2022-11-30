@@ -141,7 +141,6 @@ const MypageTest = () => {
                 type="password"
                 onChange={changePassword}
                 placeholder="비밀번호를 입력해주세요"
-                value={password}
               ></input>
             </div>
             <div className="MypageEdit_passwordbox_newpasswordbox2_subject MyPageEdit_box_subject">
@@ -150,6 +149,7 @@ const MypageTest = () => {
             <div className="MypageEdit_passwordbox_newpasswordbox2_content MyPageEdit_box_content">
               <input
                 className="MypageEdit_passwordbox_newpasswordbox2_input input_common_properties"
+                placeholder="비밀번호를 입력해주세요"
                 type="password"
               ></input>
             </div>
@@ -169,9 +169,6 @@ const MypageTest = () => {
                     url: `${BACKEND_URL}/user/modify`,
                     method: "POST",
                     data: {
-                      id,
-                      userid,
-                      username,
                       nickname,
                       password,
                       email,

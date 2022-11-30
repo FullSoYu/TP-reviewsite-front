@@ -5,7 +5,6 @@ import Home from "./Components/Home/Home";
 import Main from "./Components/Main/Main";
 import SignUp from "./Components/Sign/SignUp";
 import Detail from "./Components/Detail/Detail";
-import Mypage from "./Components/Mypage/Mypage";
 import { RecoilRoot } from "recoil";
 import MyReview from "./Components/Mypage/MyReview";
 import Help from "./Components/Sign/Help";
@@ -13,6 +12,7 @@ import FindId from "./Components/Sign/FindId";
 import FindPw from "./Components/Sign/FindPw";
 import LikePage from "./Components/Mypage/LikePage";
 import MypageTest from "./Components/Mypage/MypageTest";
+import MypageUserConfirmTest from "./Components/Mypage/MypageUserConfirmTest";
 
 const App = () => {
   const [inputText, setInputText] = useState("");
@@ -83,9 +83,6 @@ const App = () => {
             <Route path={"/Detail/:place_name/:id"} exact>
               <Detail />
             </Route>
-            <Route path={"/Mypage"} exact>
-              <Mypage />
-            </Route>
             <Route path={"/MyReview"} exact>
               <MyReview />
             </Route>
@@ -103,6 +100,9 @@ const App = () => {
             </Route>
             <Route path={"/mypagetest"} exact>
               <MypageTest />
+            </Route>
+            <Route path={"/MypageUserConfirmTest"} exact>
+              <MypageUserConfirmTest />
             </Route>
           </Switch>
         </BrowserRouter>
