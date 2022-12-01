@@ -12,25 +12,30 @@ const MypageUserConfirmTest = () => {
   const [userid, setUserid] = useState("");
   const [password, setPassword] = useState("");
 
-  console.log(password);
-
   const loginUser = async (e) => {
     e.preventDefault();
-    console.log(password);
-    // try {
-    //   password =
-    //   window.location.href = "/MypageTest";
-    // } catch (e) {
-    //   console.log(e);
-    //   alert("비밀번호를 확인하세요.");
-    //   setPassword("");
-    // }
+    try {
+      const data = await axios({
+        url: `${BACKEND_URL}/user/UserConfirmPwd`,
+        method: "POST",
+        data: {
+          password,
+        },
+      });
+      setUser(data.data);
+      window.location.href = "/MypageTest";
+    } catch (e) {
+      console.log(e);
+      alert("비밀번호를 확인하세요.");
+      console.log(password);
+      setPassword("");
+    }
   };
 
   return (
     <div>
       <TopbarV2 />
-      <form action="">
+      <form onSubmit={loginUser}>
         <h2 className="MypageUserConfirmTest_Title">회원정보수정</h2>
         <div className="MypageUserConfirmTest_Container">
           <div className="MypageUserConfirmTest_Box">
@@ -61,9 +66,6 @@ const MypageUserConfirmTest = () => {
               <button
                 className="MypageUserConfirmTest_Confirm_button MyPageUserConfirmTest_button_common_properties"
                 type="submit"
-                onClick={() => {
-                  window.location.href = "/MypageTest";
-                }}
               >
                 확인
               </button>
