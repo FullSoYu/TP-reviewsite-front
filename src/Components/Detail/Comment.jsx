@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { BACKEND_URL } from "../../utils";
+import "../../Style/Detail/Comment.scss";
 
 const Comment = ({ reviewlist, nickname, reviewRef }) => {
   const onSubmoit = (e) => {
@@ -50,7 +51,7 @@ const Comment = ({ reviewlist, nickname, reviewRef }) => {
     if (Click == true) {
       setClick((Click) => !Click); // on,off 개념 boolean
       console.log(rating, content, reviewlist.id);
-      if (window.confirm("수정하시겟습니까?") == true) {
+      if (window.confirm("수정하시겠습니까?") == true) {
         get();
         console.log("수정 완료되었습니다.");
       } else {
@@ -75,7 +76,6 @@ const Comment = ({ reviewlist, nickname, reviewRef }) => {
   useEffect(() => {
     setting();
     setRating(reviewlist.star);
-    console.log(rating);
   }, []);
 
   return (
@@ -125,17 +125,17 @@ const Comment = ({ reviewlist, nickname, reviewRef }) => {
           {reviewlist.createDate.substring(0, 10)}
           &nbsp;
           {reviewlist.createDate.substring(11, 16)}
-          {nickname == reviewlist.nickname && (
-            <>
-              <button className="textbut">
-                <span onClick={toggleClick}>수정</span>
-              </button>
-              <button className="textbut" onClick={onSubmoit}>
-                <span>삭제</span>
-              </button>
-            </>
-          )}
         </div>
+        {nickname == reviewlist.nickname && (
+          <>
+            <button className="textbut">
+              <span onClick={toggleClick}>수정</span>
+            </button>
+            <button className="textbut" onClick={onSubmoit}>
+              <span>삭제</span>
+            </button>
+          </>
+        )}
         {/* 리뷰 content--------------------------------- */}
       </div>
       {Click == false && (
@@ -155,7 +155,6 @@ const Comment = ({ reviewlist, nickname, reviewRef }) => {
             <img className="userimg" src="/images/6.jpg" alt="" />
             <div>{reviewlist.nickname}</div>
           </div>
-
           <textarea
             className="editcontent"
             cols="100"

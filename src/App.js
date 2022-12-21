@@ -83,6 +83,10 @@ const App = () => {
             <Route path={"/Detail/:place_name/:id"} exact>
               <Detail />
             </Route>
+
+            {/* <Route path={"/Mypage"} exact>
+              <Mypage />
+            </Route> */}
             <Route path={"/MyReview"} exact>
               <MyReview />
             </Route>
@@ -95,7 +99,7 @@ const App = () => {
             <Route path={"/help/findPw"} exact>
               <FindPw />
             </Route>
-            <Route path={"/mylike"} exact>
+            <Route path={"/likePage"} exact>
               <LikePage />
             </Route>
             <Route path={"/mypagetest"} exact>
